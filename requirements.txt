@@ -2,7 +2,6 @@ transformers
 torch
 torchvision
 torchaudio
-tensorflow
 fastapi
 uvicorn[standard]
 gunicorn
