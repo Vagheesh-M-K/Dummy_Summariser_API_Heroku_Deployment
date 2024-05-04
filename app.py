@@ -3,6 +3,12 @@ from fastapi import FastAPI
 import uvicorn
 from transformers import pipeline
 
+import os
+from dotenv import load_dotenv
+load_dotenv()
+p = os.environ.get("PORT")
+# line no 6,7,8,9 helps to get the variable PORT from the .env file
+
 import pickle
 with open('HF_summarizer.pkl', 'rb') as f:
     HF_summarizer = pickle.load(f)
@@ -23,7 +29,7 @@ def get_inference(data:str):
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port = 8000)
+    uvicorn.run(app, host="0.0.0.0", port = p)
 
 ### Note that it took me about 3 hours to figure out that the model MUST be in 
 ### pickle format if we want to write code on .py file using a summarizer model
