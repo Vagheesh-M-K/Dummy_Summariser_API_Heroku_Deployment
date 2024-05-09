@@ -6,7 +6,7 @@ from transformers import pipeline
 import os
 from dotenv import load_dotenv
 load_dotenv()
-p = os.environ.get("PORT")
+p = 8080
 # line no 6,7,8,9 helps to get the variable PORT from the .env file
 
 import pickle
