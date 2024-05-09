@@ -4,11 +4,10 @@ import uvicorn
 from transformers import pipeline
 
 from tokenizers import Tokenizer,models
-from tokenizers.pre_tokenizers import CharDelimiterSplit
+from tokenizers.pre_tokenizers import BertpreTokenizer
 
 tokenizer = Tokenizer(models.BPE())
-tokenizer.pre_tokenizer=CharDelimiterSplit(' ')
-
+tokenizer.pre_tokenizer=BertpreTokenizer()
 
 import os
 from dotenv import load_dotenv
