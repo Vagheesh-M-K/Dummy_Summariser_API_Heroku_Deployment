@@ -3,6 +3,13 @@ from fastapi import FastAPI
 import uvicorn
 from transformers import pipeline
 
+from tokenizers import Tokenizer,models
+from tokenizers.pre_tokenizers import CharDelimiterSplit
+
+tokenizer = Tokenizer(models.BPE())
+tokenizer.pre_tokenizer=CharDelimiterSplit(' ')
+
+
 import os
 from dotenv import load_dotenv
 load_dotenv()

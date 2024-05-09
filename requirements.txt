@@ -1,9 +1,6 @@
 transformers
 torch
-torchvision
-torchaudio
+tokenizers
 fastapi
 uvicorn[standard]
 gunicorn
-python-dotenv
-gradio
